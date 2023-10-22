@@ -1,0 +1,15 @@
+{
+  // https://nuxt.com/docs/guide/concepts/typescript
+  "compilerOptions": {
+    "allowJs": true,
+    "types": [
+      "vue"
+    ],
+    // その他の設定,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"]
+    }
+  },
+  "esModuleInterop": true
+}
