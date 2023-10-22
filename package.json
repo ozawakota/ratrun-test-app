@@ -10,12 +10,28 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.4.0",
+    "@fortawesome/free-solid-svg-icons": "^6.4.0",
+    "@fortawesome/vue-fontawesome": "^3.0.3",
     "@nuxt/devtools": "latest",
+    "@types/node": "^18",
     "nuxt": "^3.8.0",
     "vue": "^3.3.6",
     "vue-router": "^4.2.5"
   },
+  "volta": {
+    "node": "18.12.1",
+    "yarn": "1.22.19"
+  },
+
   "dependencies": {
+    "@nuxt/http": "^0.6.4",
+    "dayjs-nuxt": "^1.1.2",
+    "normalize.css": "^8.0.1",
+    "nuxt-fontawesome": "^0.4.0",
+    "sass": "^1.63.5",
     "firebase": "^10.5.0"
   }
 }
+
+

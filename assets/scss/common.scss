@@ -1,0 +1,269 @@
+
+// Fonts
+$baseFontFamily: "游ゴシック", "Yu Gothic", "游ゴシック体", YuGothic, sans-serif;
+
+// Colors
+$colorText: #333;
+
+
+$tb:  768px;
+$tb-min:  769px;
+
+@mixin tablet {
+  @media only screen and (min-width: ($tb-min)) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media only screen and (max-width: ($tb)) {
+    @content;
+  }
+}
+
+
+
+@function contWidth($num,$base){ 
+  @return calc($num / $base) * 100%;
+}
+
+
+@function vwPC($num){
+  @return 100vw * calc($num / 1920);
+}
+@function vwSP($num){
+  @return 100vw * calc($num * 2 / 750);
+}
+
+
+.is-pc {
+  display: none !important;
+  @include tablet {
+    display: block !important;
+  }
+}
+@include tablet {
+  .is-sp {
+    display: none !important;
+  }
+}
+
+
+
+* {
+  box-sizing: border-box;
+  scroll-margin-top: var(--header-height);
+  &:before,
+  &:after {
+    box-sizing: inherit;
+  }
+}
+
+html,
+body {
+  text-size-adjust: 100%;
+}
+
+html {
+  line-height: 1.15;
+  --header-height: 0;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  font-family: $baseFontFamily;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: $colorText;
+  word-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+  
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+p{
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+
+}
+
+li, nav ul, ol, ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+dl,
+dd {
+  margin: 0;
+}
+
+figure {
+  margin: 0;
+}
+
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+}
+
+select {
+  appearance: none;
+}
+
+button {
+  padding: 0;
+  font-weight: 500;
+
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+picture {
+  img {
+    max-width: 100%;
+  }
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.8em 1em;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.4;
+  background-color: #fff;
+  border: 1px solid #C3C5C5;
+  border-radius: 5px;
+  outline: 0;
+  @mixin mobile {
+    font-size: 14px;
+  }
+  &::placeholder {
+    color: #00000054;
+  }
+  &:focus {
+    border-color: #75d3d7;
+    // outline: 1px solid #888;
+  }
+  &:-webkit-autofill {
+    box-shadow: 0 0 0px 100px #ccc inset;
+  }
+}
+
+textarea {
+  min-height: 180px;
+  resize: vertical;
+}
+
+input[type="radio"] {
+  appearance: none;
+  position: absolute;
+  display: none;
+  vertical-align: text-bottom;
+}
+
+/* iOSでのデフォルトスタイルをリセット */
+input[type="submit"],
+input[type="button"] {
+  -webkit-box-sizing: content-box;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 0;
+  -webkit-appearance: button;
+  appearance: button;
+  &::-webkit-search-decoration {
+    display: none;
+  }
+  &:focus {
+    outline-offset: -2px;
+  }
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input[disabled] {
+  opacity: 1;
+}
+
+summary {
+  display: block;
+  list-style: none;
+  cursor: pointer;
+  &::-webkit-details-marker {
+    display: none;
+  }
+}
+
+
+
+.c-inner {
+  width: calc(100% - 3rem);
+  margin-inline: auto;
+}
+
+.c-fieldset{
+  legend{
+    padding-block-end:15px;
+  }
+  & + * {
+    margin-block-start:30px;
+  }
+}
+
+.c-btn{
+  padding: 0.5rem 1rem;
+  line-height: 1.5;
+  border-radius: 0.3rem;
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  font-size: 1rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+}
+
+.p-title{
+  font-size: 24px;
+}
