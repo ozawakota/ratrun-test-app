@@ -73,3 +73,35 @@ bun run preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
+nuxt の ssr モードなので、genarate コマンドを叩かないと static ファイルが出来上がりません。
+.github/yaml ファイル 2 つとも
+
+- name: Build
+  run: npm run build
+  これを
+- name: Build
+  run: npm run generate
+
+          また、generateでは、distではなく、.outputにつくられるので、
+
+  firebase.json を以下に変更
+  {
+  "hosting": {
+  "public": ".output/public",
+  "ignore": [
+  "firebase.json",
+  "**/.*",
+  "**/node_modules/**"
+  ],
+  "rewrites": [
+  {
+  "source": "**",
+  "destination": "/index.html"
+  }
+  ]
+  }
+  }
+
+firebase emulators:start
+これをたたいたら無事表示できました。
