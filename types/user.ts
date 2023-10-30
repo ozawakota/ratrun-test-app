@@ -1,4 +1,4 @@
-export type UserDataType = {email:string,password:string}
+export type UserDataType = { email: string; password: string };
 
 export type InputDataType = {
   label: string;

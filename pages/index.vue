@@ -13,28 +13,23 @@
 <script setup lang="ts">
 import { BasicLoading } from "@/components/atoms/Loading/";
 import { ref } from "vue";
-import type { Ref } from 'vue';
-import {
-  getMatters,
-} from "@/api/matters";
+import type { Ref } from "vue";
+import { getMatters } from "@/api/matters";
 import { Matters } from "@/types/matter";
-
 
 const isLoading = ref(false);
 const matters: Ref<Matters[]> = ref([]);
 
 (async () => {
-
   try {
     isLoading.value = true;
     matters.value = await getMatters();
   } catch {
     alert("error");
   } finally {
-    isLoading.value = false
+    isLoading.value = false;
   }
 })();
-
 </script>
 <style lang="scss" scoped>
 .top {
