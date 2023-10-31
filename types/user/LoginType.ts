@@ -1,6 +1,6 @@
 //  例えばここにリクエストやレスポンスのtypeを設定する
 interface UserReqType {
-    email: string;
-    password: string;
+  email: string;
+  password: string;
 }
-export {UserReqType}
+export type { UserReqType };
