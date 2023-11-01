@@ -105,3 +105,5 @@ nuxt の ssr モードなので、genarate コマンドを叩かないと static
 
 firebase emulators:start
 これをたたいたら無事表示できました。
+
+netlify に変更
