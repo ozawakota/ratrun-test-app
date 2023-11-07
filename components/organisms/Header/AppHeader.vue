@@ -34,7 +34,12 @@
 
 <style lang='scss' scoped>
 .header {
+  background: #fff;
   border-bottom: 1px solid #dee2e6;
+  position: fixed;
+  top:0;
+  width:100%;
+  z-index: 1;
   &-inner {
     display: flex;
     align-items: center;
