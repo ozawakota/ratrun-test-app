@@ -1,16 +1,18 @@
 <template>
-  <section class="page login">
-    <div class="c-inner">
-      <div class="login_inner">
-        <h2 class="p-title">ログイン画面</h2>
-        <BasicForm
-          @form-submitted="$emit('formSubmitted', $event)"
-          @update-input="$emit('updateInput', $event)"
-          btnText = "ログインする"
-        />
+  <main class="main">
+    <section class="page login">
+      <div class="c-inner">
+        <div class="login_inner">
+          <h2 class="p-title">ログイン画面</h2>
+          <BasicForm
+            @form-submitted="$emit('formSubmitted', $event)"
+            @update-input="$emit('updateInput', $event)"
+            btnText = "ログインする"
+          />
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 </template>
   
 <script lang="ts" setup>

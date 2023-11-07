@@ -1,16 +1,18 @@
 <template>
-  <section class="page signup">
-    <div class="c-inner">
-      <div class="signup_inner">
-        <h2 class="p-title">新規会員登録</h2>
-        <BasicForm
-          @form-submitted="$emit('formSubmitted', $event)"
-          @update-input="$emit('updateInput', $event)"
-          btnText = "同意して新規登録する(無料)"
-        />
+  <main class="main">
+    <section class="page signup">
+      <div class="c-inner">
+        <div class="signup_inner">
+          <h2 class="p-title">新規会員登録</h2>
+          <BasicForm
+            @form-submitted="$emit('formSubmitted', $event)"
+            @update-input="$emit('updateInput', $event)"
+            btnText = "同意して新規登録する(無料)"
+          />
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 </template>
   
 <script lang="ts" setup>
